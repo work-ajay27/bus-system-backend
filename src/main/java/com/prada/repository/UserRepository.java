@@ -1,6 +1,6 @@
 package com.prada.repository;
 
-import org.apache.catalina.User;
+import com.prada.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //User → Which table you want to interact with
