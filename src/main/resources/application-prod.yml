@@ -1,24 +1,13 @@
 spring:
   datasource:
-    url: ${DATABASE_URL}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: ${DATABASE_USERNAME}
+    driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
     password: ${DATABASE_PASSWORD}
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-
-server:
-  port: ${PORT:8080}
-
-  
-  
-  
- # IMPORTANT — Render environment variable
-  #In Render dashboard → "Environment Variables":
-  #SPRING_PROFILES_ACTIVE=prod
+        dialect: org.hibernate.dialect.PostgreSQLDialect
